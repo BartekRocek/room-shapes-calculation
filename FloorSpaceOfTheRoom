@@ -1,0 +1,63 @@
+import java.util.*;
+
+public class FloorSpaceOfTheRoom {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        String shapeOfRoom = scanner.next().toLowerCase();
+
+        switch (shapeOfRoom) {
+
+            case "triangle":
+                calculateTriangleRoomFloorage();
+                break;
+            case "rectangle":
+                calculateRectangularRoomFloorage();
+                break;
+            case "circle":
+                calculateCircularRoomFloorage();
+                break;
+            }
+}
+    public static void calculateTriangleRoomFloorage() {
+        Scanner scanner = new Scanner(System.in);
+
+        double triangleCircumference;
+        double triangleArea;
+
+        double a = scanner.nextDouble();
+        double b = scanner.nextDouble();
+        double c = scanner.nextDouble();
+
+        triangleCircumference = a + b +c;
+        double halfOfTriangleCircumference = triangleCircumference / 2;
+
+        triangleArea = Math.sqrt(halfOfTriangleCircumference * (halfOfTriangleCircumference - a)
+                    * (halfOfTriangleCircumference - b) * (halfOfTriangleCircumference - c));
+
+            System.out.println(triangleArea);
+    }
+
+    public static void calculateRectangularRoomFloorage() {
+        Scanner scanner = new Scanner(System.in);
+        double rectangleArea;
+        double a = scanner.nextDouble();
+        double b = scanner.nextDouble();
+
+        rectangleArea = a * b;
+
+        System.out.println(rectangleArea);
+    }
+
+    public static void calculateCircularRoomFloorage() {
+        Scanner scanner = new Scanner(System.in);
+        double circleArea;
+        double r = scanner.nextDouble();
+        final double pi = 3.14;
+
+        circleArea = pi * Math.pow(r, 2);
+
+        System.out.println(circleArea);
+    }
+}
